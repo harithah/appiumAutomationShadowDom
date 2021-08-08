@@ -1,7 +1,10 @@
 class Page {
 
     open() {
-        return browser.url('https://shop.polymer-project.org/')
+        browser.url('https://shop.polymer-project.org/')
+        let contexts = driver.getContexts();
+        console.log("context==>" + contexts);
+        driver.switchContext(contexts[1]);
     }
 
     getShadowDom() {
